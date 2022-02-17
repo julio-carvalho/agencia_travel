@@ -28,11 +28,16 @@ body {
     float: right;
 }
 
-.cabecalho h2{
+.cabecalho .bottom-entre box-icon {
+	float: left;
+	margin-right: 10px;
+}
+
+.cabecalho .bottom-entre h2{
 	font-size: 18px;
-	float: right;
 	color: white;
 	margin-top: -6px;
+	margin-left: 10px;
 }
 
 .bottom-entre .icon {

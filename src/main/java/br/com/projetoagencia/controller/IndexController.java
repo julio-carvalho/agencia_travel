@@ -113,8 +113,14 @@ public class IndexController {
 		
 		if(cliente.getSenha().equals(cliente.getSenhaConfirma())) {
 			if(cliente.getCpf().matches("[0-9]*")) {
-				if(!cliente.getNome().matches("[0-9]*")) {
-					return true;
+				Cliente clienteCPF = clienteRepository.findByCpf(cliente.getCpf());
+				if(clienteCPF == null) {
+					Cliente clienteEmail = clienteRepository.findByEmail(cliente.getEmail());
+					if(clienteEmail == null) {
+						if(!cliente.getNome().matches("[0-9]*")) {
+							return true;
+						}
+					}
 				}
 			}
 		} 
